@@ -66,6 +66,7 @@
                  #js {:modules #js {:toolbar (aget (.-children (r/dom-node component)) 0)}
                       :theme "snow"
                       :placeholder "Compose an epic..."}))
+        
         (.on @this "text-change"
              (fn [delta old-delta source]
                (on-change-fn source (value))))
