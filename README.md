@@ -12,7 +12,7 @@ Add the css theme file (adjusting paths to suit) to the head of your file
  (include-css "/quill/css/quill.snow.css")]
 ```
 
-Add the cljsjs dependency to the `:dependencies` vector of your `project.clj`
+Add the cljsjs dependency
 ```cljs
 [cljsjs/quill "1.1.0-3"]
 ```
