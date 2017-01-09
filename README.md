@@ -37,5 +37,5 @@ In your reagent app, use quill like so:
      :content "welcome to reagent-quill!"
      :selection nil
      :on-change-fn #(if (= % "user")
-                      (println (str "text changed: " %2)}]]
+                      (println (str "text changed: " %2))}]]
 ```
