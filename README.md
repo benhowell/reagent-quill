@@ -18,10 +18,10 @@ Add the cljsjs dependency to the `:dependencies` vector of your `project.clj`
 ```
 
 reagent-quill/editor takes the following parameters:
- * id (string): a unique id to associate with the editor and toolbar of your quill component
- * content (string | html): the content to display
- * selection (vector [start-index finish-index] | nil): the text to select
- * on-change-fn (function): the function to call when editor text changes
+ * `id` (string): a unique id to associate with the editor and toolbar of your quill component
+ * `content` (string | html): the content to display
+ * `selection` (vector [start-index finish-index] | nil): the text to select
+ * `on-change-fn` (function): the function to call when editor text changes
 
 Make sure to require cljsjs.quill somewhere in your project so it is added to your compiled ClojureScript code. I put all my cljsjs deps in core.cljs but it really doesn't matter. Note: you need only reference the cljsjs.quill dep once and it'll be available everywhere in your project.
 
@@ -41,8 +41,8 @@ In your reagent app, use the editor like so:
 ```
 
 reagent-quill/display-area takes the following parameters:
- * id (string): a unique id to associate with the editor and toolbar of your quill component
- * content (string | html): the content to display
+ * `id` (string): a unique id to associate with the editor and toolbar of your quill component
+ * `content` (string | html): the content to display
  
 In your reagent app, use the display-area like so:
 ```cljs
