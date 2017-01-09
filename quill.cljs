@@ -55,23 +55,20 @@
 
 
 (defn editor [{:keys [id content selection on-change-fn]}]
-  (let [dom-mount (r/atom nil)
-        this (r/atom nil)
-        value (atom nil)]
+  (let [this (r/atom nil)
+        value #(.. @this -container -firstChild -innerHTML)]
     (r/create-class
      {:component-did-mount
       (fn [component]
-        (reset! dom-mount (r/dom-node component))
         (reset! this
                 (js/Quill.
-                 (aget (.-children @dom-mount) 1)
-                 #js {:modules #js {:toolbar (aget (.-children @dom-mount) 0)}
+                 (aget (.-children (r/dom-node component)) 1)
+                 #js {:modules #js {:toolbar (aget (.-children (r/dom-node component)) 0)}
                       :theme "snow"
                       :placeholder "Compose an epic..."}))
         (.on @this "text-change"
              (fn [delta old-delta source]
-               (reset! value (.. @this -container -firstChild -innerHTML))
-               (on-change-fn source @value)))
+               (on-change-fn source (value))))
 
         (if (= selection nil)
           (.setSelection @this nil)
@@ -81,7 +78,7 @@
       (fn [component next-props]
         (if
             (or
-             (not= (:content (second next-props)) @value)
+             (not= (:content (second next-props)) (value))
              (not= (:id (r/props component)) (:id (second next-props))))
           (do
             (if (= selection nil)
