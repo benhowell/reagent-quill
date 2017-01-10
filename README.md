@@ -1,7 +1,7 @@
 # reagent-quill
 Basic [reagent](http://reagent-project.github.io/) recipe for [Quill rich text editor](http://quilljs.com/)
 
-This is by no means a complete implementation. See the [Quill documentation](http://quilljs.com/docs/quickstart/) for a full rundown of what's possible. Note that the toolbar can have many more functions including your own custom stuff. Also note that this example deals with only HTML and therefore does not use [deltas](https://quilljs.com/guides/designing-the-delta-format/) and as such does no delta <-> HTML conversion. I have built these particular examples to both create text and display text (so for just displaying text, building an editor without a toolbar is as straight forward as it sounds). These recipes provide clear enough templates to riff on.
+See the [Quill documentation](http://quilljs.com/docs/quickstart/) for a full rundown of what's possible. Note that the toolbar can have many more functions including your own custom stuff. Also note that this example deals with only HTML and therefore does not use [deltas](https://quilljs.com/guides/designing-the-delta-format/) and as such does no delta <-> HTML conversion. I have built these particular examples to both create text and display text (so for just displaying text, building an editor without a toolbar is as straight forward as it sounds). These recipes provide clear enough templates to riff on.
 
 ## Usage
 
