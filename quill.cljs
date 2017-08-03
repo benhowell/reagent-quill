@@ -56,7 +56,7 @@
 
 (defn editor [{:keys [id content selection on-change-fn]}]
   (let [this (r/atom nil)
-        value #(.. @this -container -firstChild -innerHTML)]
+        value #(aget @this "container" "firstChild" "innerHTML")]
     (r/create-class
      {:component-did-mount
       (fn [component]
